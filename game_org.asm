@@ -18,7 +18,15 @@ main:
 	loadn R1, #tela4Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #256   			; cor branca!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
+	
+	call AguardaEnter
+	
+	call ApagaTela
+	loadn R1, #tela5Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #256   			; cor branca!
+	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
 
+	halt
 
 ;********************************************************
 ;                       IMPRIME TELA2
@@ -126,6 +134,21 @@ ApagaTela:
 	rts	
 	
 ;------------------------	
+	
+;********************************************************
+;                       AGUARDA ENTER
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do ENTER
+AguardaEnter:
+    inchar r6
+    loadn r7, #13
+    cmp r7, r6
+    jne AguardaEnter
+    rts
+
+
+;------------------------
 ; Declara uma tela vazia para ser preenchida em tempo de execussao:
 
 tela0Linha0  : string "                                        "
@@ -162,7 +185,7 @@ tela0Linha29 : string "                                        "
 ; Declara e preenche tela linha por linha (40 caracteres):
 tela1Linha0  : string "                                        "
 tela1Linha1  : string "                                        "
-tela1Linha2  : string "                                        "
+tela1Linha2  : string "             [PRESS ENTER]              "
 tela1Linha3  : string "                                        "
 tela1Linha4  : string "                                        "
 tela1Linha5  : string "                                        "
@@ -290,3 +313,36 @@ tela4Linha26 : string "                 ...                    "
 tela4Linha27 : string "                ...                     "
 tela4Linha28 : string "               ....                     "
 tela4Linha29 : string "              .....                     "
+
+
+
+tela5Linha0  : string "                                        "
+tela5Linha1  : string "                                        "
+tela5Linha2  : string "                                        "
+tela5Linha3  : string "                                        "
+tela5Linha4  : string "                                        "
+tela5Linha5  : string "                                        "
+tela5Linha6  : string "                                        "
+tela5Linha7  : string "                                        "
+tela5Linha8  : string "                                        "
+tela5Linha9  : string "                                        "
+tela5Linha10 : string "                                        "
+tela5Linha11 : string "                                        "
+tela5Linha12 : string "                                        "
+tela5Linha13 : string "                  OK                    "
+tela5Linha14 : string "                                        "
+tela5Linha15 : string "                                        "
+tela5Linha16 : string "                                        "
+tela5Linha17 : string "                                        "
+tela5Linha18 : string "                                        "
+tela5Linha19 : string "                                        "
+tela5Linha20 : string "                                        "
+tela5Linha21 : string "                                        "
+tela5Linha22 : string "                                        "
+tela5Linha23 : string "                                        "
+tela5Linha24 : string "                                        "
+tela5Linha25 : string "                                        "
+tela5Linha26 : string "                                        "
+tela5Linha27 : string "                                        "
+tela5Linha28 : string "                                        "
+tela5Linha29 : string "                                        "
