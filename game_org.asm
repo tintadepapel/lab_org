@@ -25,6 +25,10 @@ main:
 	loadn R1, #tela5Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #256   			; cor branca!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
+	
+	call AguardaOpcao
+	
+	
 
 	halt
 
@@ -146,7 +150,36 @@ AguardaEnter:
     cmp r7, r6
     jne AguardaEnter
     rts
+    
+;********************************************************
+;                       AGUARDA OPCAO
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do ENTER
+AguardaOpcao:
+    inchar r6
+    loadn r7, #49 ; Opcao 1
+    loadn r5, #50 ; Opcao 2
+    cmp r7, r6
+    jeq next1
+    cmp r5, r6
+    jeq next2
+    jne AguardaOpcao ; Se nao apertar 1 ou 2 continua aqui
+    rts
+    
+next1:
+	call ApagaTela
+	loadn R1, #tela6Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor branca!
+	call ImprimeTela2 
+	rts
 
+next2:
+	call ApagaTela
+	loadn R1, #tela7Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor branca!
+	call ImprimeTela2 
+	rts
 
 ;------------------------
 ; Declara uma tela vazia para ser preenchida em tempo de execussao:
@@ -328,8 +361,8 @@ tela5Linha8  : string "                                        "
 tela5Linha9  : string "                                        "
 tela5Linha10 : string "                                        "
 tela5Linha11 : string "                                        "
-tela5Linha12 : string "                                        "
-tela5Linha13 : string "                  OK                    "
+tela5Linha12 : string "                 PRESS                  "
+tela5Linha13 : string "               [1] or [2]               "
 tela5Linha14 : string "                                        "
 tela5Linha15 : string "                                        "
 tela5Linha16 : string "                                        "
@@ -346,3 +379,69 @@ tela5Linha26 : string "                                        "
 tela5Linha27 : string "                                        "
 tela5Linha28 : string "                                        "
 tela5Linha29 : string "                                        "
+
+
+
+tela6Linha0  : string "                                        "
+tela6Linha1  : string "                                        "
+tela6Linha2  : string "                                        "
+tela6Linha3  : string "                                        "
+tela6Linha4  : string "                                        "
+tela6Linha5  : string "                                        "
+tela6Linha6  : string "                                        "
+tela6Linha7  : string "                                        "
+tela6Linha8  : string "                                        "
+tela6Linha9  : string "                                        "
+tela6Linha10 : string "                                        "
+tela6Linha11 : string "                                        "
+tela6Linha12 : string "                                        "
+tela6Linha13 : string "                  01                    "
+tela6Linha14 : string "                                        "
+tela6Linha15 : string "                                        "
+tela6Linha16 : string "                                        "
+tela6Linha17 : string "                                        "
+tela6Linha18 : string "                                        "
+tela6Linha19 : string "                                        "
+tela6Linha20 : string "                                        "
+tela6Linha21 : string "                                        "
+tela6Linha22 : string "                                        "
+tela6Linha23 : string "                                        "
+tela6Linha24 : string "                                        "
+tela6Linha25 : string "                                        "
+tela6Linha26 : string "                                        "
+tela6Linha27 : string "                                        "
+tela6Linha28 : string "                                        "
+tela6Linha29 : string "                                        "
+
+
+
+tela7Linha0  : string "                                        "
+tela7Linha1  : string "                                        "
+tela7Linha2  : string "                                        "
+tela7Linha3  : string "                                        "
+tela7Linha4  : string "                                        "
+tela7Linha5  : string "                                        "
+tela7Linha6  : string "                                        "
+tela7Linha7  : string "                                        "
+tela7Linha8  : string "                                        "
+tela7Linha9  : string "                                        "
+tela7Linha10 : string "                                        "
+tela7Linha11 : string "                                        "
+tela7Linha12 : string "                                        "
+tela7Linha13 : string "                  02                    "
+tela7Linha14 : string "                                        "
+tela7Linha15 : string "                                        "
+tela7Linha16 : string "                                        "
+tela7Linha17 : string "                                        "
+tela7Linha18 : string "                                        "
+tela7Linha19 : string "                                        "
+tela7Linha20 : string "                                        "
+tela7Linha21 : string "                                        "
+tela7Linha22 : string "                                        "
+tela7Linha23 : string "                                        "
+tela7Linha24 : string "                                        "
+tela7Linha25 : string "                                        "
+tela7Linha26 : string "                                        "
+tela7Linha27 : string "                                        "
+tela7Linha28 : string "                                        "
+tela7Linha29 : string "                                        "
