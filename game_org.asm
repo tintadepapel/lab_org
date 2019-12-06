@@ -201,6 +201,74 @@ AguardaOpcao3:
     jeq next6
     jne AguardaOpcao3 ; Se nao apertar 1 ou 2 continua aqui
     rts
+    
+;********************************************************
+;                       AGUARDA OPCAO 4
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do numero 1
+;r5: valor ASCII do numero 2
+AguardaOpcao4:
+    inchar r6
+    loadn r7, #49 ; Opcao 1
+    loadn r5, #50 ; Opcao 2
+    cmp r7, r6
+    jeq next7
+    cmp r5, r6
+    jeq next8
+    jne AguardaOpcao4 ; Se nao apertar 1 ou 2 continua aqui
+    rts
+    
+;********************************************************
+;                       AGUARDA OPCAO 5
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do numero 1
+;r5: valor ASCII do numero 2
+AguardaOpcao5:
+    inchar r6
+    loadn r7, #49 ; Opcao 1
+    loadn r5, #50 ; Opcao 2
+    cmp r7, r6
+    jeq next9
+    cmp r5, r6
+    jeq next10
+    jne AguardaOpcao5 ; Se nao apertar 1 ou 2 continua aqui
+    rts
+
+;********************************************************
+;                       AGUARDA OPCAO 6
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do numero 1
+;r5: valor ASCII do numero 2
+AguardaOpcao6:
+    inchar r6
+    loadn r7, #49 ; Opcao 1
+    loadn r5, #50 ; Opcao 2
+    cmp r7, r6
+    jeq next11
+    cmp r5, r6
+    jeq next12
+    jne AguardaOpcao6 ; Se nao apertar 1 ou 2 continua aqui
+    rts
+    
+;********************************************************
+;                       AGUARDA OPCAO 7
+;********************************************************
+;r6: Leitura do Caractere
+;r7: valor ASCII do numero 1
+;r5: valor ASCII do numero 2
+AguardaOpcao7:
+    inchar r6
+    loadn r7, #49 ; Opcao 1
+    loadn r5, #50 ; Opcao 2
+    cmp r7, r6
+    jeq next13
+    cmp r5, r6
+    jeq next14
+    jne AguardaOpcao7 ; Se nao apertar 1 ou 2 continua aqui
+    rts
 
 ;********************************************************
 ;                       NEXT 1
@@ -221,7 +289,7 @@ next2:
 	loadn R1, #tela7Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #2816   			; cor amarela!
 	call ImprimeTela2
-	call AguardaOpcao2
+	call AguardaOpcao3
 	rts
 	
 ;********************************************************
@@ -232,7 +300,7 @@ next3:
 	loadn R1, #tela8Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #2816   			; cor amarela!
 	call ImprimeTela2
-	call AguardaOpcao3 
+	call AguardaOpcao4 
 	rts
 
 ;********************************************************
@@ -243,7 +311,7 @@ next4:
 	loadn R1, #tela9Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #2816   			; cor amarela!
 	call ImprimeTela2
-	call AguardaOpcao3
+	call AguardaOpcao5
 	rts
 
 ;********************************************************
@@ -254,7 +322,7 @@ next5:
 	loadn R1, #tela10Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #2816   			; cor amarela!
 	call ImprimeTela2
-	;call AguardaOpcao3 
+	call AguardaOpcao6 
 	rts
 
 ;********************************************************
@@ -265,7 +333,95 @@ next6:
 	loadn R1, #tela11Linha0	; Endereco onde comeca a primeira linha do cenario!!
 	loadn R2, #2816   			; cor amarela!
 	call ImprimeTela2
-	;call AguardaOpcao3
+	call AguardaOpcao7
+	rts
+
+;********************************************************
+;                       NEXT 7
+;******************************************************** 
+next7:
+	call ApagaTela
+	loadn R1, #tela12Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao8
+	rts
+
+;********************************************************
+;                       NEXT 8
+;******************************************************** 
+next8:
+	call ApagaTela
+	loadn R1, #tela13Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao9
+	rts
+
+;********************************************************
+;                       NEXT 9
+;******************************************************** 
+next9:
+	call ApagaTela
+	loadn R1, #tela14Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao10
+	rts
+
+;********************************************************
+;                       NEXT 10
+;******************************************************** 
+next10:
+	call ApagaTela
+	loadn R1, #tela15Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao11
+	rts
+
+;********************************************************
+;                       NEXT 11
+;******************************************************** 
+next11:
+	call ApagaTela
+	loadn R1, #tela16Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao12
+	rts
+
+;********************************************************
+;                       NEXT 12
+;******************************************************** 
+next12:
+	call ApagaTela
+	loadn R1, #tela17Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao13
+	rts
+
+;********************************************************
+;                       NEXT 13
+;******************************************************** 
+next13:
+	call ApagaTela
+	loadn R1, #tela18Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao14
+	rts
+
+;********************************************************
+;                       NEXT 14
+;******************************************************** 
+next14:
+	call ApagaTela
+	loadn R1, #tela19Linha0	; Endereco onde comeca a primeira linha do cenario!!
+	loadn R2, #2816   			; cor amarela!
+	call ImprimeTela2
+	;call AguardaOpcao15
 	rts
 
 ;------------------------
@@ -540,7 +696,7 @@ tela8Linha1  : string "                                        "
 tela8Linha2  : string "                                        "
 tela8Linha3  : string "     O cara nao fazia ideia do          "
 tela8Linha4  : string "     que estava acontecendo, logico,    "
-tela8Linha5  : string "     voce foi muito inocente.            "
+tela8Linha5  : string "     voce foi muito inocente.           "
 tela8Linha6  : string "                                        "
 tela8Linha7  : string "     O professor percebeu que voce      "
 tela8Linha8  : string "     estava conversando - quem mandou   "
@@ -667,33 +823,264 @@ tela11Linha29 : string "                                        "
 
 
 
-telaXLinha0  : string "                                    XX  "
-telaXLinha1  : string "                                        "
-telaXLinha2  : string "                                        "
-telaXLinha3  : string "                                        "
-telaXLinha4  : string "                                        "
-telaXLinha5  : string "                                        "
-telaXLinha6  : string "                                        "
-telaXLinha7  : string "                                        "
-telaXLinha8  : string "                                        "
-telaXLinha9  : string "                                        "
-telaXLinha10 : string "                                        "
-telaXLinha11 : string "                                        "
-telaXLinha12 : string "                                        "
-telaXLinha13 : string "                                        "
-telaXLinha14 : string "                                        "
-telaXLinha15 : string "                                        "
-telaXLinha16 : string "                                        "
-telaXLinha17 : string "                                        "
-telaXLinha18 : string "                                        "
-telaXLinha19 : string "                                        "
-telaXLinha20 : string "                                        "
-telaXLinha21 : string "                                        "
-telaXLinha22 : string "                                        "
-telaXLinha23 : string "                                        "
-telaXLinha24 : string "                                        "
-telaXLinha25 : string "                                        "
-telaXLinha26 : string "                                        "
-telaXLinha27 : string "                 PRESS                  "
-telaXLinha28 : string "               [1] or [2]               "
-telaXLinha29 : string "                                        "
+tela12Linha0  : string "                                    D1  "
+tela12Linha1  : string "                                        "
+tela12Linha2  : string "                                        "
+tela12Linha3  : string "                                        "
+tela12Linha4  : string "                                        "
+tela12Linha5  : string "                                        "
+tela12Linha6  : string "                                        "
+tela12Linha7  : string "                                        "
+tela12Linha8  : string "                                        "
+tela12Linha9  : string "                                        "
+tela12Linha10 : string "                                        "
+tela12Linha11 : string "                                        "
+tela12Linha12 : string "                                        "
+tela12Linha13 : string "                                        "
+tela12Linha14 : string "                                        "
+tela12Linha15 : string "                                        "
+tela12Linha16 : string "                                        "
+tela12Linha17 : string "                                        "
+tela12Linha18 : string "                                        "
+tela12Linha19 : string "                                        "
+tela12Linha20 : string "                                        "
+tela12Linha21 : string "                                        "
+tela12Linha22 : string "                                        "
+tela12Linha23 : string "                                        "
+tela12Linha24 : string "                                        "
+tela12Linha25 : string "                                        "
+tela12Linha26 : string "                                        "
+tela12Linha27 : string "                 PRESS                  "
+tela12Linha28 : string "               [1] or [2]               "
+tela12Linha29 : string "                                        "
+
+
+
+tela13Linha0  : string "                                    D2  "
+tela13Linha1  : string "                                        "
+tela13Linha2  : string "                                        "
+tela13Linha3  : string "                                        "
+tela13Linha4  : string "                                        "
+tela13Linha5  : string "                                        "
+tela13Linha6  : string "                                        "
+tela13Linha7  : string "                                        "
+tela13Linha8  : string "                                        "
+tela13Linha9  : string "                                        "
+tela13Linha10 : string "                                        "
+tela13Linha11 : string "                                        "
+tela13Linha12 : string "                                        "
+tela13Linha13 : string "                                        "
+tela13Linha14 : string "                                        "
+tela13Linha15 : string "                                        "
+tela13Linha16 : string "                                        "
+tela13Linha17 : string "                                        "
+tela13Linha18 : string "                                        "
+tela13Linha19 : string "                                        "
+tela13Linha20 : string "                                        "
+tela13Linha21 : string "                                        "
+tela13Linha22 : string "                                        "
+tela13Linha23 : string "                                        "
+tela13Linha24 : string "                                        "
+tela13Linha25 : string "                                        "
+tela13Linha26 : string "                                        "
+tela13Linha27 : string "                 PRESS                  "
+tela13Linha28 : string "               [1] or [2]               "
+tela13Linha29 : string "                                        "
+
+
+
+tela14Linha0  : string "                                    E1  "
+tela14Linha1  : string "                                        "
+tela14Linha2  : string "                                        "
+tela14Linha3  : string "                                        "
+tela14Linha4  : string "                                        "
+tela14Linha5  : string "                                        "
+tela14Linha6  : string "                                        "
+tela14Linha7  : string "                                        "
+tela14Linha8  : string "                                        "
+tela14Linha9  : string "                                        "
+tela14Linha10 : string "                                        "
+tela14Linha11 : string "                                        "
+tela14Linha12 : string "                                        "
+tela14Linha13 : string "                                        "
+tela14Linha14 : string "                                        "
+tela14Linha15 : string "                                        "
+tela14Linha16 : string "                                        "
+tela14Linha17 : string "                                        "
+tela14Linha18 : string "                                        "
+tela14Linha19 : string "                                        "
+tela14Linha20 : string "                                        "
+tela14Linha21 : string "                                        "
+tela14Linha22 : string "                                        "
+tela14Linha23 : string "                                        "
+tela14Linha24 : string "                                        "
+tela14Linha25 : string "                                        "
+tela14Linha26 : string "                                        "
+tela14Linha27 : string "                 PRESS                  "
+tela14Linha28 : string "               [1] or [2]               "
+tela14Linha29 : string "                                        "
+
+
+
+tela15Linha0  : string "                                    E2  "
+tela15Linha1  : string "                                        "
+tela15Linha2  : string "                                        "
+tela15Linha3  : string "                                        "
+tela15Linha4  : string "                                        "
+tela15Linha5  : string "                                        "
+tela15Linha6  : string "                                        "
+tela15Linha7  : string "                                        "
+tela15Linha8  : string "                                        "
+tela15Linha9  : string "                                        "
+tela15Linha10 : string "                                        "
+tela15Linha11 : string "                                        "
+tela15Linha12 : string "                                        "
+tela15Linha13 : string "                                        "
+tela15Linha14 : string "                                        "
+tela15Linha15 : string "                                        "
+tela15Linha16 : string "                                        "
+tela15Linha17 : string "                                        "
+tela15Linha18 : string "                                        "
+tela15Linha19 : string "                                        "
+tela15Linha20 : string "                                        "
+tela15Linha21 : string "                                        "
+tela15Linha22 : string "                                        "
+tela15Linha23 : string "                                        "
+tela15Linha24 : string "                                        "
+tela15Linha25 : string "                                        "
+tela15Linha26 : string "                                        "
+tela15Linha27 : string "                 PRESS                  "
+tela15Linha28 : string "               [1] or [2]               "
+tela15Linha29 : string "                                        "
+
+
+
+tela16Linha0  : string "                                    F1  "
+tela16Linha1  : string "                                        "
+tela16Linha2  : string "                                        "
+tela16Linha3  : string "                                        "
+tela16Linha4  : string "                                        "
+tela16Linha5  : string "                                        "
+tela16Linha6  : string "                                        "
+tela16Linha7  : string "                                        "
+tela16Linha8  : string "                                        "
+tela16Linha9  : string "                                        "
+tela16Linha10 : string "                                        "
+tela16Linha11 : string "                                        "
+tela16Linha12 : string "                                        "
+tela16Linha13 : string "                                        "
+tela16Linha14 : string "                                        "
+tela16Linha15 : string "                                        "
+tela16Linha16 : string "                                        "
+tela16Linha17 : string "                                        "
+tela16Linha18 : string "                                        "
+tela16Linha19 : string "                                        "
+tela16Linha20 : string "                                        "
+tela16Linha21 : string "                                        "
+tela16Linha22 : string "                                        "
+tela16Linha23 : string "                                        "
+tela16Linha24 : string "                                        "
+tela16Linha25 : string "                                        "
+tela16Linha26 : string "                                        "
+tela16Linha27 : string "                 PRESS                  "
+tela16Linha28 : string "               [1] or [2]               "
+tela16Linha29 : string "                                        "
+
+
+
+tela17Linha0  : string "                                    F2  "
+tela17Linha1  : string "                                        "
+tela17Linha2  : string "                                        "
+tela17Linha3  : string "                                        "
+tela17Linha4  : string "                                        "
+tela17Linha5  : string "                                        "
+tela17Linha6  : string "                                        "
+tela17Linha7  : string "                                        "
+tela17Linha8  : string "                                        "
+tela17Linha9  : string "                                        "
+tela17Linha10 : string "                                        "
+tela17Linha11 : string "                                        "
+tela17Linha12 : string "                                        "
+tela17Linha13 : string "                                        "
+tela17Linha14 : string "                                        "
+tela17Linha15 : string "                                        "
+tela17Linha16 : string "                                        "
+tela17Linha17 : string "                                        "
+tela17Linha18 : string "                                        "
+tela17Linha19 : string "                                        "
+tela17Linha20 : string "                                        "
+tela17Linha21 : string "                                        "
+tela17Linha22 : string "                                        "
+tela17Linha23 : string "                                        "
+tela17Linha24 : string "                                        "
+tela17Linha25 : string "                                        "
+tela17Linha26 : string "                                        "
+tela17Linha27 : string "                 PRESS                  "
+tela17Linha28 : string "               [1] or [2]               "
+tela17Linha29 : string "                                        "
+
+
+
+tela18Linha0  : string "                                    G1  "
+tela18Linha1  : string "                                        "
+tela18Linha2  : string "                                        "
+tela18Linha3  : string "                                        "
+tela18Linha4  : string "                                        "
+tela18Linha5  : string "                                        "
+tela18Linha6  : string "                                        "
+tela18Linha7  : string "                                        "
+tela18Linha8  : string "                                        "
+tela18Linha9  : string "                                        "
+tela18Linha10 : string "                                        "
+tela18Linha11 : string "                                        "
+tela18Linha12 : string "                                        "
+tela18Linha13 : string "                                        "
+tela18Linha14 : string "                                        "
+tela18Linha15 : string "                                        "
+tela18Linha16 : string "                                        "
+tela18Linha17 : string "                                        "
+tela18Linha18 : string "                                        "
+tela18Linha19 : string "                                        "
+tela18Linha20 : string "                                        "
+tela18Linha21 : string "                                        "
+tela18Linha22 : string "                                        "
+tela18Linha23 : string "                                        "
+tela18Linha24 : string "                                        "
+tela18Linha25 : string "                                        "
+tela18Linha26 : string "                                        "
+tela18Linha27 : string "                 PRESS                  "
+tela18Linha28 : string "               [1] or [2]               "
+tela18Linha29 : string "                                        "
+
+
+
+tela19Linha0  : string "                                    G2  "
+tela19Linha1  : string "                                        "
+tela19Linha2  : string "                                        "
+tela19Linha3  : string "                                        "
+tela19Linha4  : string "                                        "
+tela19Linha5  : string "                                        "
+tela19Linha6  : string "                                        "
+tela19Linha7  : string "                                        "
+tela19Linha8  : string "                                        "
+tela19Linha9  : string "                                        "
+tela19Linha10 : string "                                        "
+tela19Linha11 : string "                                        "
+tela19Linha12 : string "                                        "
+tela19Linha13 : string "                                        "
+tela19Linha14 : string "                                        "
+tela19Linha15 : string "                                        "
+tela19Linha16 : string "                                        "
+tela19Linha17 : string "                                        "
+tela19Linha18 : string "                                        "
+tela19Linha19 : string "                                        "
+tela19Linha20 : string "                                        "
+tela19Linha21 : string "                                        "
+tela19Linha22 : string "                                        "
+tela19Linha23 : string "                                        "
+tela19Linha24 : string "                                        "
+tela19Linha25 : string "                                        "
+tela19Linha26 : string "                                        "
+tela19Linha27 : string "                 PRESS                  "
+tela19Linha28 : string "               [1] or [2]               "
+tela19Linha29 : string "                                        "
